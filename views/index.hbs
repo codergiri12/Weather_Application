@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- linking bootstrap css -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+  <!-- linking original css -->
+  <link rel="stylesheet" type="text/css" href="./css/mainStyle.css">
+
+  <link rel = "icon" href ="./images/logo_weather.png" type = "image/x-icon"> 
+  <title>Weather Application</title>
+</head>
+
+<body onload="makePage('hyderabad')">
+  <!------------------------top div with IMAGE and SEARCH BAR OPEN------------------- -->
+  <div class="bigger">
+    <div class="top_logo" style="padding-left: 20px;padding-top: 10px;margin-bottom: 20px;">
+      <img id="logo-img" src="./images/logo_weather.png" alt="logo not found" width="40px" height="40px">
+      <span id="logo-text">Zyro Weather</span>
+    </div>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" id="city_input_field" placeholder="City Name..."
+        aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-outline-primary" type="button" id="button-addon2">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <div class="row" style="height: 225px; margin-top: 70px;">
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 first_col pr-0" style="background-color: #ffffff26;">
+        <div class="temp_info" style="position: relative;">
+          <span id="temp_orig_val">10</span>
+          <span id="celcius">°C</span>
+          <figure>
+            <img id="weather_icon" src="images/weather_pngs/clear_64.png" alt="">
+            <figcaption id="weather_orig_status" style="padding-left: 8px;color: wheat;font-family: 'Roboto';">
+              Sunny
+            </figcaption>
+          </figure>
+        </div>
+        <div class="city_info" style="margin-top: 20px;">
+          <span id="city_orig_val">Hyderabad , India</span>
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0 mid_space_col" style="border: 2px solid white;">
+        <!-- This div is only for maintaining gap in-between the left&Right divs -->
+      </div>
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 last_col" style="background-color: #ffffff26;">
+        <div id="city_orig_right_info">Hyderabad, India</div>
+        <div id="date_orig_info">2020-11-08</div>
+        <div id="day_orig_info">
+          <span id="day_orig_val">Sun</span> , <span id="time_orig_val">11:30AM</span>
+        </div>
+        <div class="extra_orig_info row" style="margin-top: 20px;">
+          <div class="col-lg-3 col-md-6 col-xs-6 one">
+            <div id="precip">10%</div>
+            <div class="extra_below_val">Pressure</div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-6 two">
+            <div id="humid">0%</div>
+            <div class="extra_below_val">Humid</div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-6 three">
+            <div id="wind">10Kmph</div>
+            <div class="extra_below_val">Wind</div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-6 four">
+            <div id="feelslike">10°C</div>
+            <div class="extra_below_val">Avg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ---------------------top div with IMAGE and SEARCH BAR CLOSED--------------- -->
+
+  <!-- ---------------------deck-cards for 6 days OPEN ------------------------------ -->
+  <h1 class="display-6 text-center ml2"><b class="underline">This week Forecast</b></h1>
+  <div class="row g-4" style="margin-bottom:40px">
+    <div class="col">
+      <div class="card ">
+        <img src="images/weather_pngs/cloudy_64.png" class="card-img-top weather_card_image" alt="...">
+        <p class="weather_card_orig_status">Rainy</p>
+        <div class="card-body">
+          <p class="last-line-weather-card">
+            <span class="day_card_orig_status">Mon</span><span class="temp_card_orig_status">30</span>°C
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images/weather_pngs/clear_64.png" class="card-img-top weather_card_image" alt="...">
+        <p class="weather_card_orig_status">Rainy</p>
+        <div class="card-body">
+          <p class="last-line-weather-card">
+            <span class="day_card_orig_status">Mon</span><span class="temp_card_orig_status">30</span>°C
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card ">
+        <img src="images/weather_pngs/sun_64.png" class="card-img-top weather_card_image" alt="...">
+        <p class="weather_card_orig_status">Rainy</p>
+        <div class="card-body">
+          <p class="last-line-weather-card">
+            <span class="day_card_orig_status">Mon</span><span class="temp_card_orig_status">30</span>°C
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card ">
+        <img src="images/weather_pngs/rainy_64.png" class="card-img-top weather_card_image" alt="...">
+        <p class="weather_card_orig_status">Rainy</p>
+        <div class="card-body">
+          <p class="last-line-weather-card">
+            <span class="day_card_orig_status">Mon</span><span class="temp_card_orig_status">30</span>°C
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card ">
+        <img src="images/weather_pngs/rainy_64.png" class="card-img-top weather_card_image" alt="...">
+        <p class="weather_card_orig_status">Rainy</p>
+        <div class="card-body">
+          <p class="last-line-weather-card">
+            <span class="day_card_orig_status">Mon</span><span class="temp_card_orig_status">30</span>°C
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card ">
+        <img src="images/weather_pngs/rainy_64.png" class="card-img-top weather_card_image" alt="...">
+        <p class="weather_card_orig_status">Rainy</p>
+        <div class="card-body">
+          <p class="last-line-weather-card">
+            <span class="day_card_orig_status">Mon</span><span class="temp_card_orig_status">30</span>°C
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------------------deck-cards for 6 days CLOSED ------------------------------ -->
+
+  {{!------------------------chart of 6 days START------------------------------------- --}}
+  <div id="chartContainer" style="height: 300px; width: 100%; position: relative;"></div>
+
+  {{!------------------------chart of 6 days END------------------------------------- --}}
+
+{{!-- ---------------------------footer START------------------------------------------ --}}
+  <section id="lab_social_icon_footer">
+    <div id="footer-text">
+      This is a completely responsive page and is made by using NODE JS , EXPRESS JS .<br/>This page shows  weather data of almost all cities in the world...
+    </div>
+    
+    <div class="container">
+      <div class="inside-footer text-center center-block">
+        <a href="https://www.facebook.com/girisai.nemali/"><i id="social-fb"
+            class="fa fa-facebook-square fa-3x social"></i></a>
+        <a href="https://github.com/codergiri12"><i id="social-gt" class="fa fa-github-square fa-3x social"></i></a>
+        <a href="https://www.instagram.com/girisainemali/"><i id="social-in"
+            class="fa fa-instagram fa-3x social"></i></a>
+        <a href="mailto:#"><i id="social-ln" class="fa fa-linkedin-square fa-3x social"></i></a>
+      </div>
+    </div>
+  </section>
+{{!-- ---------------------------------footer END----------------------------------- --}}
+  <!-- Option 1: Bootstrap Bundle with Popper.js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+
+  <script src="public_main.js"></script>
+  <script>
+    var textWrapper = document.querySelector('.ml2');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml2 .letter',
+        scale: [4, 1],
+        opacity: [0, 1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 450,
+        delay: (el, i) => 70 * i
+      }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 500
+      });
+  </script>
+</body>
+
+</html>
