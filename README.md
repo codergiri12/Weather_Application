@@ -1,4 +1,11 @@
 # Weather_Application
+To check the working version of this app click the below link.....
+
+
+LINK: https://zyro-weather-app.herokuapp.com/
+
+
+
 This website/Application gives u the info of 6 days from today
 
 src Folder ---> contains all files necessary for node js, express js
